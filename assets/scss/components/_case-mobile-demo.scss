@@ -1,0 +1,140 @@
+.case-mobile-demo {
+  padding-bottom: 80px;
+  background-color: $white;
+  overflow: hidden;
+}
+
+.case-mobile-demo__header {
+  padding-top: 80px;
+  padding-bottom: 60px;
+
+  @include media($large) {
+    margin-top: 40px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    min-height: 200px;
+  }
+}
+
+.case-mobile-demo__title {
+  margin: 0;
+  color: $black;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+
+  @include media($large) {
+    @include span-columns(4 of 8);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43px;
+  }
+}
+
+.case-mobile-demo__description {
+  margin-top: 20px;
+  color: $tundora;
+  font-weight: 400;
+  line-height: 21px;
+
+  @include media($large) {
+    @include span-columns(4 of 8);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: .25em;
+  }
+}
+
+.case-mobile-demo__content {
+  margin-right: -20px;
+  margin-left: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-size: cover;
+  background-position: center center;
+
+  @include media($large) {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.case-mobile-demo__images {
+  @include media($large) {
+    position: relative;
+  }
+}
+
+.case-mobile-demo {
+  .field--name-field-mobile-demo-image {
+    z-index: 1;
+
+    &.slick-dotted.slick-slider {
+      margin-bottom: 0;
+
+      @include media($large) {
+        margin-bottom: 80px;
+        padding-top: percentage(30/1380);
+        padding-bottom: percentage(30/1380);
+      }
+    }
+
+    .field__item {
+      display: none;
+    }
+
+    &.slick-initialized {
+      .field__item {
+        display: block;
+      }
+    }
+
+    .slick-dots {
+      bottom: -75px;
+    }
+  }
+}
+
+.case-mobile-demo__images {
+  @include media($large) {
+    margin-right: - percentage(25/1380);
+    margin-left: - percentage(25/1380);
+  }
+
+  .field__item {
+    text-align: center;
+    position: relative;
+    outline: none;
+    padding: 10px;
+
+    img {
+      display: inline-block;
+
+      // prevent blur
+      backface-visibility: hidden;
+
+      @include media($large) {
+        min-width: 0;
+        max-width: 100%;
+      }
+    }
+
+    .field__item-inner {
+      display: inline-block;
+      box-shadow: 0 5px 10px 0 rgba($black, 0.2); // offset-x | offset-y | blur-radius | spread-radius | color
+      max-width: 85%;
+
+      @include media($large) {
+        max-width: inherit;
+        margin-right: percentage(15/266);
+        margin-left: percentage(15/266);
+
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="24px" viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-return</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Botões-e-Links" transform="translate(-1145.000000, -576.000000)" fill="#000000">
+            <g id="arrow-return" transform="translate(1145.000000, 576.000000)">
+                <path d="M3,11 C2.44771525,11 2,11.4477153 2,12 C2,12.5522847 2.44771525,13 3,13 L22,13 C22.5522847,13 23,12.5522847 23,12 C23,11.4477153 22.5522847,11 22,11 L3,11 Z" id="Line"></path>
+                <path d="M1.70710678,11.2928932 L1.70710678,12.7071068 L12.3137085,2.10050506 C12.7042328,1.70998077 12.7042328,1.07681579 12.3137085,0.686291501 C11.9231842,0.295767209 11.2900192,0.295767209 10.8994949,0.686291501 L0.292893219,11.2928932 C-0.0976310729,11.6834175 -0.0976310729,12.3165825 0.292893219,12.7071068 L10.8994949,23.3137085 C11.2900192,23.7042328 11.9231842,23.7042328 12.3137085,23.3137085 C12.7042328,22.9231842 12.7042328,22.2900192 12.3137085,21.8994949 L1.70710678,11.2928932 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

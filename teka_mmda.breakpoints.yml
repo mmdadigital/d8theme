@@ -1,0 +1,14 @@
+teka_mmda.mobile:
+  label: mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+teka_mmda.wide:
+  label: wide
+  mediaQuery: '(min-width: 1024px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x

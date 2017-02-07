@@ -1,0 +1,39 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div class="project-demo">
+    <div class="desktop-demo">
+      <div class="desktop-mockup">
+        <div class="project-demo-item">
+          {% if content.field_project_demo_title.0 %}
+            <div class="project-header ">
+              <div class="l-container">
+                <div class="l-container-inner">
+                  <div class="row">
+                    <h2 class="project-demo-title">{{ content.field_project_demo_title }}</h2>
+                    {{ content.field_project_demo_description }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          <div class="project-content">
+            <div class="l-container" style="background-color: {{ content.field_project_demo_bg_color.0['#markup'] }};">
+              <div class="l-container-inner">
+                {{ content.field_project_demo_image }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

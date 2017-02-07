@@ -1,0 +1,172 @@
+// Styles
+.card {
+  position: relative;
+}
+
+.card__link {
+  position: relative;
+  display: block;
+  transition: transform .5s $easing;
+
+  &:hover{
+    @include media($large) {
+      transform: translate(-5px, -5px);
+    }
+  }
+
+  // Overlay
+  &:before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow $timing $easing, background-color $timing $easing;
+    background-color: rgba($black, .3);
+
+    .no-touchevents .card:hover & {
+      background-color: rgba($black, .5);
+      box-shadow: 5px 5px 25px rgba($black, .25);
+    }
+  }
+
+  &:hover ~ .card__content .card__title  a {
+    &:after {
+      opacity: 1.0;
+      bottom: -6px;
+
+      @include media($large) {
+        bottom: -6px;
+      }
+    }
+  }
+}
+
+.card__image {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+
+  picture {
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+
+    @include media($large) {
+      padding: 74%;
+    }
+  }
+
+  img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    @include opacity(0);
+    @include transition(opacity .5s $easing);
+
+    &[typeof="foaf:Image"] {
+      @include opacity(1);
+    }
+
+    @include media($large) {
+      height: 100%;
+    }
+  }
+}
+
+.card__title {
+  margin: 0;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -.5px;
+  line-height: 22px;
+
+  @include media($large) {
+    margin-top: 35px;
+    font-size: 20px;
+    letter-spacing: -0.56px;
+    line-height: 24px;
+  }
+
+  &,
+  a {
+    position: relative;
+    color: $black;
+
+    &:after {
+      opacity: 0.0;
+      left: 0;
+      position: absolute;
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $star-dust;
+      transition: bottom $timing $easing, opacity $timing $easing;
+
+      @include media($large) {
+        bottom: -10px;
+      }
+    }
+
+    .view-id-cases_block.view-display-id-cases_view & {
+      color: $white;
+    }
+
+    &:hover {
+      &  a {
+        &:after {
+          opacity: 1.0;
+          bottom: -6px;
+
+          @include media($large) {
+            bottom: -6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card__description {
+  margin-top: .5em;
+  font-family: $sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: $star-dust;
+
+  @include media($large) {
+    font-size: 18px;
+  }
+}
+
+.card__icon {
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translateX(-50%) translateY(-50%);
+  color: white;
+  transition: top ($timing * 2) $easing, opacity $timing $easing;
+  @include opacity(0);
+
+  .icon {
+    @include icon-size(60px);
+  }
+
+  .touchevents & {
+    @include media($large) {
+      top: 50%;
+      @include opacity(0.5);
+    }
+  }
+
+  .no-touchevents .card:hover & {
+    opacity: 1;
+    top: 50%;
+  }
+}

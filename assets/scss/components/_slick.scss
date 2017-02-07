@@ -1,0 +1,38 @@
+// custom styles for slick slider
+.slick-dotted.slick-slider {
+  margin-bottom: 50px;
+}
+
+.slick-dots {
+  bottom: -45px;
+  li {
+    margin: 0;
+    width: auto;
+    height: auto;
+
+    button {
+      width: 44px;
+      height: 44px;
+
+      &:before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border: 1px solid $mountain-mist;
+        border-radius: 50%;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 1;
+      }
+    }
+
+    &.slick-active {
+      button:before {
+        border-color: $alto;
+        background-color: $alto;
+        opacity: 1;
+      }
+    }
+  }
+}

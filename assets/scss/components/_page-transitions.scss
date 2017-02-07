@@ -1,0 +1,71 @@
+.m-scene {
+
+  .scene_element__main {
+    z-index: 1;
+    position: relative;
+  }
+
+  .l-scene--new {
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .scene_element {
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+  }
+
+  .scene_element--fadein {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+
+  .scene_element--fadeinleft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+  }
+
+  .scene_element--fadeindown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+  }
+
+  .scene_element--fadeinup {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+
+  .scene_element--fadeinright {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+
+  .scene_element--delayed {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+
+  &.is-exiting {
+
+    .scene_element {
+      -webkit-animation-direction: alternate-reverse;
+      animation-direction: alternate-reverse;
+    }
+
+    .scene_element--delayed {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+
+    .scene_element--noexiting {
+      -webkit-animation-direction: alternate-reverse;
+      animation-direction: alternate-reverse;
+    }
+  }
+}

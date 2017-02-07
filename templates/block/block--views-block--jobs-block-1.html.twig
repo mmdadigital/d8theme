@@ -1,0 +1,30 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+  set title_classes = [
+  'block__title',
+  ]
+%}
+
+<div{{ attributes.setAttribute('id', 'open-positions').addClass(classes) }}>
+  <div class="l-container">
+    <div class="l-container-inner">
+      {{ title_prefix }}
+      {% if label %}
+        <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+      {% endif %}
+      {{ title_suffix }}
+      <div class="block__content">
+        {% block content %}
+          {{ attach_library('teka_mmda/remodal') }}
+          {{ content }}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

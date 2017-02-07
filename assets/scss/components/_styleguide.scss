@@ -1,0 +1,35 @@
+.styleguide {
+  .l-container--example {
+    border: 1px dashed $red-ribbon;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .row--example {
+    + .row--example {
+      margin-top: 10px;
+    }
+  }
+
+  .col-example {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px dashed $red-ribbon;
+  }
+
+  .col {
+    @include span-columns(12);
+  }
+
+  .col--4 {
+    @include media($large) {
+      @include span-columns(4);
+    }
+  }
+
+  .col--3 {
+    @include media($large) {
+      @include span-columns(3);
+    }
+  }
+}

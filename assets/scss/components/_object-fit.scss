@@ -1,0 +1,7 @@
+// no object fit fallback
+.js-no-objectfit {
+  .no-objectfit & {
+    background-size: cover;
+    background-position: center center;
+  }
+}

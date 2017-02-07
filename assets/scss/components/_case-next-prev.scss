@@ -1,0 +1,96 @@
+.block-mmda-core-next-prev {
+  margin-top: 40px;
+  background: $white;
+  @include transition(background $timing $easing);
+
+  @include media($large) {
+    margin-top: 80px;
+  }
+
+  .block__content {
+    height: 375px;
+    @include media($large) {
+      height: 380px;
+    }
+
+    .next {
+      padding-top: 171px;
+      @include media($large) {
+        padding-top: 154px;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        color: $shark;
+
+        &:hover {
+          .link-block:after {
+            bottom: 0;
+            @include opacity(1);
+          }
+        }
+      }
+    }
+
+    .header{
+      font-size: 16px;
+      color: $star-dust;
+      @include media($large) {
+        font-size: 24px;
+      }
+    }
+
+    .link-block {
+      display: inline-block;
+      position: relative;
+      font-size: 24px;
+      color: $shark;
+      margin-top: 10px;
+
+      @include media($large) {
+        font-size: 42px;
+      }
+
+      &:after {
+        left: 0;
+        bottom: -5px;
+        position: absolute;
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $star-dust;
+        transition: bottom $timing $easing, opacity $timing $easing;
+        @include opacity(0);
+      }
+    }
+
+    .link-icon {
+      top: 50%;
+      right: 0;
+      position: absolute;
+      @include transform(translateY(-40%) scaleX(-1));
+
+      .icon {
+        height: 22px;
+        width:  22px;
+      }
+    }
+
+  }
+
+  &:hover {
+    background: $shark;
+
+    .link-block, .next a {
+      color: $white;
+    }
+
+    .link-block:after {
+      bottom: 0;
+      background: $star-dust;
+      @include opacity(1);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{% set data_title = node.label %}
+<article{{ attributes.addClass(classes).setAttribute('data-title', data_title) }}>
+  <div{{ content_attributes.addClass('node__content') }}>
+    <div class="services-slick-bg">
+      <div class="services-slick-bg--fixed" style="background-image: url({{ file_url(content.field_image['#items'].entity.uri.value) }});"></div>
+      <div class="node__content-inner">
+        <div class="l-container">
+          <div class="l-container-inner">
+            {{ content|without('field_image') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

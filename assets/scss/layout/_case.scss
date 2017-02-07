@@ -1,0 +1,9 @@
+.page-node-type-cases {
+  .l-container--content-wrapper {
+    @include reset-container;
+  }
+  
+  #block-teka-mmda-page-title {
+    display: none;
+  }
+}

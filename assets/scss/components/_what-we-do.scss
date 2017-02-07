@@ -1,0 +1,194 @@
+// View.
+.block-views-blockwhat-we-do-block-1 {
+  background-color: #fff;
+
+  .block__title-wrapper {
+    padding: 35px 0;
+
+    @include media($large) {
+      padding: 45px 0;
+    }
+  }
+
+  .block__title {
+    @include title;
+    @include title-secondary;
+    letter-spacing: -1.5px;
+    margin: 0;
+  }
+
+  .view {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slick-dotted.slick-slider {
+    z-index: 2;
+    margin-bottom: 0;
+  }
+
+  .l-container-inner {
+    z-index: 3;
+    position: relative;
+  }
+
+  .slick-slider .slick-track, .slick-slider .slick-list {
+    transform: none;
+  }
+}
+
+.view-id-what_we_do.view-display-id-block_1 {
+  z-index: 1;
+  position: relative;
+  background-color: $shark;
+}
+
+.what-we-do__slick-dots {
+  position: absolute;
+  top: (70 / 667 * 100) + vh;
+  right: 0;
+  left: 0;
+  z-index: 3;
+
+  .slick-dots {
+    position: static;
+
+    @include media($large) {
+      top: (120 / 900 * 100) + vh;
+    }
+
+    @include media(min-height $medium orientation landscape) {
+      top: 120px;
+      top: (120 / 900 * 100) + vh;
+    }
+
+    .flexbox & {
+      // !important to override inline style added by Slick
+      display: flex !important;
+      justify-content: space-between;
+      // reset clearfix
+      &:before,
+      &:after {
+        content: normal;
+      }
+    }
+
+    li {
+      padding-top: .5em;
+      color: $white;
+      width: auto;
+      height: auto;
+      font-family: $sans-serif-m;
+      font-weight: normal;
+      margin-right: 3vw;
+      margin-left: 3vw;
+      margin-bottom: 50px;
+      transition: color $easing $timing, border-color $easing $timing;
+
+      .flexbox & {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      @include media($medium) {
+        font-size: 24px;
+      }
+
+      @include media($large) {
+        font-size: 36px;
+        border-top-width: 3px;
+      }
+
+      &:hover,
+      &.slick-active {
+        color: $star-dust;
+      }
+    }
+  }
+}
+
+.slick_bar_active {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background: $star-dust;
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include transition(left $easing $timing, width $easing $timing);
+}
+
+// What we do footer.
+.l-what-we-do__footer {
+  z-index: 3;
+  position: absolute;
+  bottom: (90 / 667 * 100) + vh;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+  @include media($large) {
+    bottom: (75 / 900 * 100 + vh);
+  }
+}
+
+.what-we-do__cta {
+  color: #fff;
+  font-size: 14px;
+  line-height: (17 / 14);
+  font-weight: 500;
+  width: auto;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  @include media(orientation landscape) {
+    width: auto;
+    text-align: center;
+  }
+
+  @include media($large) {
+    font-size: 18px;
+    float: right;
+    line-height: (23 / 18);
+    width: 180px;
+    text-align: left;
+  }
+
+  a {
+    position: relative;
+    color: $red-ribbon;
+    pointer-events: auto;
+
+    &:after {
+      left: 0;
+      position: absolute;
+      bottom: -6px;
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $red-ribbon;
+      transition: bottom $timing $easing, opacity $timing $easing;
+      @include opacity(0);
+    }
+
+    &:hover {
+      &:after {
+        bottom: 0;
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+.view-id-what_we_do {
+  .field--name-body {
+    padding:0 12px;
+    p {
+      font-weight: normal;
+      margin-bottom: 30px
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'card'
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+      <div class="workteaser_content">
+        {{ title_prefix }}
+        {% if not page %}
+          <h2{{ title_attributes.addClass('workteaser_title') }}>
+          {% if node.field_cases_link.uri %}
+            <a href="{{ node.field_cases_link.uri }}" target="_blank">{{ label }}</a>
+          {% else %}
+            {{ label }}
+          {% endif %}
+          </h2>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="workteaser_description">
+          {{ content.field_cases_services }}
+        </div>
+      </div>
+</article>

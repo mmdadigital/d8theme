@@ -1,0 +1,98 @@
+.page-node-type-cases {
+  .project-header {
+    background-color: $white;
+    padding: 40px 0 20px;
+    @include media($large) {
+      display: block;
+      min-height: 200px;
+      padding: 80px 0 40px;
+    }
+    .project-demo-title {
+      font-family: $sans-serif-m;
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 22px;
+      @include media($large) {
+        @include span-columns(4 of 8);
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 43px;
+      }
+    }
+  }
+
+  .block-local-tasks-block {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 180px;
+    padding: 0 20px;
+
+    ul {
+      margin-top: 120px;
+      text-align: right;
+
+      li {
+        display: block;
+        float: none;
+        a {
+          &.is-active,
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .contextual {
+      ul.contextual-links {
+        display: none;
+      }
+
+      &.open {
+        ul.contextual-links {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
+.project-demo-item {
+  margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field--name-field-project-demo-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  @include media($large) {
+    @include span-columns(4 of 8);
+    color: $tundora;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: 40px;
+  }
+}
+
+.field--name-field-project-demo-image {
+  text-align: center;
+  @include media($large) {
+    margin-right: -55px;
+    margin-left: -55px;
+  }
+  img {
+    padding: 40px 0;
+    @include media($large) {
+      padding: 80px 0;
+    }
+  }
+}
+
+.field--name-field-cases-project-demo{
+  background-color: $white;
+}

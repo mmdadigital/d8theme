@@ -1,0 +1,71 @@
+.path-contact {
+  .l-container--content-wrapper {
+    @include reset-container;
+  }
+
+  .page-title-wrapper {
+    @include container;
+    padding-bottom: 60px;
+
+    @include media($large) {
+      padding-bottom: 70px;
+    }
+  }
+
+  .block-page-title-block {
+    display: none;
+  }
+
+  .block-region-two {
+    @include container-inner;
+  }
+
+  .l-mmda-contact__row—title {
+    padding-top: 120px;
+
+    @include media($large) {
+      padding-top: 160px;
+    }
+
+    .l-container {
+      padding: 60px 0 0;
+      @include container-inner;
+
+      @include media($large) {
+        padding: 60px 0;
+      }
+    }
+
+    .block-page-title-block {
+      display: block;
+    }
+
+    h1 {
+      @include title;
+      @include title-primary;
+    }
+  }
+
+  .l-mmda-contact__row--1 {
+    padding-bottom: 80px;
+
+    @include media($large) {
+      padding-bottom: 100px;
+    }
+  }
+
+  .l-mmda-contact__row--2 {
+    .block__content {
+      .block__title {
+        margin: 0;
+        @include title;
+        @include title-secondary;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .parallax-bg {
+    background-image: url('/themes/teka_mmda/dist/img/bgcontact.jpg');
+  }
+}

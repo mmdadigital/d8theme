@@ -1,0 +1,52 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+  set title_classes = [
+  'block__title',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    <div class="block__content">
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+</div>
+
+<div class="hero__cta">
+  <div class="l-container">
+    <div class="l-container-inner">
+    <div class="hero__row clearfix scene_element scene_element--fadein scene_element--delayed">
+      <div class="hero__col">
+        <div class="hero__brand scene_element">
+          <div class="hero__brand-inner">
+            <svg><use xlink:href="/themes/teka_mmda/dist/svg/symbol/svg/sprite.symbol.svg#TDF"></svg>
+          </div>
+        </div>
+      </div>
+      <div class="hero__col">
+        <div class="hero__slogan-wrapper">
+          <span class="hero__slogan">{% trans %}We design & code{% endtrans %}</span>
+          <a href="#about" class="hero__button hero__button--large">
+            <svg class="icon icon--large"><use xlink:href="/themes/teka_mmda/dist/svg/symbol/svg/sprite.symbol.svg#cross"></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<a href="#about" class="hero__button hero__button--small">
+  <svg class="icon icon--large"><use xlink:href="/themes/teka_mmda/dist/svg/symbol/svg/sprite.symbol.svg#cross"></svg>
+</a>

@@ -1,0 +1,133 @@
+// Join Our Team
+.block-block-contenta1c744ad-a737-4b32-a8e9-b129f476eb32 {
+  .parallax-section--bg {
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      background-color: rgba($black, .65);
+      z-index: 1;
+    }
+
+    // .touchevents & {
+      // position: fixed;
+      // z-index: -2;
+    // }
+  }
+
+  .block__container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .block__title-wrapper {
+    background-color: $white;
+    padding-bottom: 40px;
+
+    @include media($large) {
+      padding-bottom: 50px;
+    }
+  }
+
+  .block__title-container {
+    @include container;
+  }
+
+  .block__title-container-inner {
+    @include container-inner;
+  }
+
+  .block__title {
+    margin: 0;
+    @include title;
+    @include title-secondary;
+  }
+
+  .block__content {
+    @include container;
+    position: relative;
+    padding-top: (97 / 667 * 100) + vh;
+    padding-bottom: (69 / 667 * 100) + vh;
+
+    @include media($large) {
+      padding-top: (110 / 900 * 100) + vh;
+      padding-bottom: (60 / 900 * 100) + vh;
+    }
+  }
+
+  .join-our-team__icon {
+    text-align: center;
+
+    a {
+      color: $red-ribbon;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .icon {
+      @include icon-size(40px);
+      transform: rotate(90deg);;
+    }
+
+  }
+
+  .field--name-field-description-content-sectio {
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 30px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @include media($large) {
+      width: 526px;
+      margin: 0 auto 30px;
+      font-size: 36px;
+      letter-spacing: -1px;
+      font-weight: 400;
+      line-height: (44 / 36);
+    }
+  }
+}
+
+// Open positions
+.block-views-blockjobs-block-1 {
+  background-color: $white;
+  padding-top: (60 / 667 * 100) + vh;
+  padding-bottom: (60 / 667 * 100) + vh;
+
+  @include media($large) {
+    padding-top: (80 / 900 * 100) + vh;
+    padding-bottom: (80 / 900 * 100) + vh;
+  }
+
+  .block__title {
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $serif;
+
+    @include media($large) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .views-row {
+    @include row;
+    padding-bottom: 15px;
+
+    + .views-row {
+      border-top: 1px solid rgba(#ccc, .5);
+      padding-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: 100%;
+  // -webkit-font-smoothing: antialiased;
+  // line-height: $base-line-height;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  // font-size: $font-size;
+  // line-height: $heading-line-height;
+  // margin: 0 0 $small-spacing;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color .1s linear;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+// Titles
+.title {
+  @include title;
+}
+
+.title--primary {
+  @include title-primary;
+}
+
+.title--secondary {
+  @include title-secondary;
+}
+
+.title-light {
+  @include title($white);
+}

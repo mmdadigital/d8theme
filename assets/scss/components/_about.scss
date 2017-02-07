@@ -1,0 +1,56 @@
+.l-mmda-home__row--2 {
+  background-color: #fff;
+}
+
+.block-block-content3ed3ecec-9cb1-4908-b2a5-f062f15ba900 {
+  min-height: 100vh;
+  padding-top: (60 / 667 * 100) + vh;
+  padding-bottom: (80 / 667 * 100) + vh;
+
+  .block__title {
+    @include title;
+    @include title-primary;
+  }
+
+  .field--name-field-description-content-sectio {
+    @include clearfix();
+
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: (28 / 18);
+      max-width: percentage(274/330);
+      min-width: 285px;
+      margin-top: (60 / 667 * 100) + vh;
+      margin-bottom: (60 / 667 * 100) + vh;
+      color: $black;
+
+      @include media($large) {
+        font-size: 34px;
+        line-height: (42 / 36);
+        min-width: 755px;
+        max-width: percentage(755 / 900);
+      }
+    }
+
+    p {
+      font-family: $sans-serif;
+      color: $tundora;
+      max-width: percentage(200/330);
+      min-width: 200px;
+      float: right;
+      line-height: (24 / 16);
+      font-weight: normal;
+      margin-bottom: 24px;
+
+      @include media($large) {
+        font-size: 18px;
+        line-height: (32 / 18);
+        margin-right: percentage(40/900);
+        max-width: 380px;
+        width: 45%;
+        float: left;
+      }
+    }
+  }
+}

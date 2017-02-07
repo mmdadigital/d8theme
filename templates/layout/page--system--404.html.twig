@@ -1,0 +1,14 @@
+<div class="l-page-wrapper scene_element__main scene_element--fadein">
+  {{ page.highlighted }}
+  {{ page.help }}
+  <main role="main" class="l-main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <div class="l-container l-container--content-wrapper">
+      <div class="l-container-inner">
+        <div class="layout-content">
+          {{ page.content }}
+        </div>{# /.layout-content #}
+      </div>
+    </div>
+  </main>
+</div>{# /.page-wrapper #}

@@ -1,0 +1,69 @@
+.fadeMeIn {
+  opacity: 0;
+  transition: opacity $timing $easing;
+
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+.parallax-element {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  // top: -50vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+  .no-touchevents & {
+    background-attachment: fixed;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: rgba(0,0,0,.65);
+    z-index: 1;
+  }
+}
+
+.parallax-wrapper {
+  position: relative;
+}
+
+// .parallax-inner {
+  // .touchevents & {
+    // position: fixed;
+    // top: 0;
+  // }
+// }
+
+.parallax-slide {
+  position: absolute;
+  // top: -50vh;
+  // height: 120vh;
+  height: 100vh;
+  width: 100%;
+
+  // .touchevents & {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+  // }
+}

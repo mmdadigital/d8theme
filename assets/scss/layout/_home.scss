@@ -1,0 +1,11 @@
+.path-home,
+.path-frontpage {
+  .l-container--content-wrapper {
+    @include reset-container;
+  }
+}
+
+.l-mmda-home__row {
+  position: relative;
+  overflow: hidden;
+}

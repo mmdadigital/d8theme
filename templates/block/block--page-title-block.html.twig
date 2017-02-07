@@ -1,0 +1,27 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class
+  ]
+%}
+{%
+  set title_classes = [
+  'block__title'
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="page-title-wrapper scene_element scene_element--fadein scene_element--delayed">
+      <div class="page-title-content">
+        {{ content }}
+      </div>
+    </div>
+  {% endblock %}
+</div>

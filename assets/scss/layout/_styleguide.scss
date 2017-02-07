@@ -1,0 +1,5 @@
+.path-styleguide {
+  .l-container--content-wrapper {
+    @include reset-container;
+  }
+}

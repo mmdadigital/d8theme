@@ -1,0 +1,159 @@
+$header-height: 120px;
+$header-height-large: 160px;
+
+// Header
+.l-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  @include opacity(1);
+  transition: opacity $timing $easing, background-color $timing $easing;
+  background-color: rgba($white, .9);
+
+  &.is-hidden {
+    pointer-events: none;
+    @include opacity(0);
+  }
+
+  .path-frontpage &,
+  .page-node-type-cases &,
+  .path-404 &,
+  .path-403 & {
+    background-color: transparent;
+  }
+}
+
+.l-header--light {
+  .path-frontpage &,
+  .page-node-type-cases & {
+    background-color: rgba($white, .9);
+  }
+}
+
+.block-system-branding-block {
+  .l-header & {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    transition: margin-top $timing $easing, margin-bottom $timing $easing;
+
+    @include media($large) {
+      margin-top: 50px;
+    }
+  }
+
+  .l-header--narrow & {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    @include media($large) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+#block-teka-mmda-main-menu {
+  .l-header & {
+    float: right;
+    clear: both;
+    transition: margin-top $timing $easing;
+
+    @include media($large) {
+      float: left;
+      clear: none;
+      margin-top: 50px;
+    }
+
+    @include media($x-large) {
+      margin-left: 0;
+    }
+  }
+  .l-header--narrow & {
+    @include media($large) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.block-language-blocklanguage-interface {
+  .l-header & {
+    float: right;
+    transition: margin-top $timing $easing;
+
+    @include media($large) {
+      margin-top: 50px;
+
+    }
+  }
+
+  .l-header--narrow & {
+    @include media($large) {
+      margin-top: 20px;
+
+    }
+  }
+}
+
+.region-header {
+  float: left;
+  position: relative;
+
+  @include media($large) {
+    @include span-columns(2);
+  }
+
+  @include media($x-large) {
+    @include span-columns(2);
+  }
+}
+
+.region-primary-menu {
+  float: right;
+
+  @include media($large) {
+    @include span-columns(8);
+  }
+}
+
+// Sticky Header
+.sticky-header-trigger,
+.sticky-header-trigger-2 {
+  position: absolute;
+}
+
+.sticky-header-trigger {
+  top: $header-height;
+
+  @include media($large) {
+    top: $header-height-large;
+  }
+}
+
+.sticky-header-trigger-2 {
+  bottom: $header-height;
+
+  @include media($large) {
+    bottom: $header-height-large;
+  }
+}
+
+//Styles for administrative menu
+.toolbar-horizontal .l-header {
+  top: 40px;
+}
+
+.toolbar-tray-open .l-header {
+  top: 80px;
+}
+
+.toolbar-vertical .l-header {
+  top: 39px;
+}
+
+.toolbar-vertical.toolbar-fixed.toolbar-tray-open .l-header {
+  left: 240px;
+}

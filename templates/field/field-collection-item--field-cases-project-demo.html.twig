@@ -1,0 +1,23 @@
+<div class="project-demo-item">
+  {% if content.field_cases_project_demo_title.0 is not null %}
+    <div class="project-header ">
+      <div class="l-container">
+        <div class="l-container-inner">
+          <div class="row">
+            <h2 class="project-demo-title">{{content.field_cases_project_demo_title.0}}</h2>
+            {% if content.field_cases_project_demo_desc is not null %}
+              {{content.field_cases_project_demo_desc}}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  <div class="project-content">
+    <div class="l-container" style="background-color: {{content.field_cases_project_demo_bg.0}};">
+      <div class="l-container-inner">
+        {{content.field_cases_project_demo_image}}
+      </div>
+    </div>
+  </div>
+</div>

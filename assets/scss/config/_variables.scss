@@ -1,0 +1,98 @@
+/**
+ * Variables
+ */
+
+
+// Typography
+// Text.
+$sans-serif: 'HelveticaNeueLTStd-Roman', arial, sans-serif;
+$sans-serif-b: 'HelveticaNeueLTStd-Bd', arial, sans-serif;
+$sans-serif-m: 'HelveticaNeueLTStd-Md', arial, sans-serif;
+$serif: 'adobe-garamond-pro', Georgia, 'Times New Roman', serif;
+$base-font-family: $sans-serif;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$font-size: em(16px);
+$em-base: 16;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$form-spacing: 15px;
+$base-z-index: 0;
+
+// Color palette.
+// Use "Name that Color" for global colors.
+// http://chir.ag/projects/name-that-color/
+$black: #000;
+$white: #fff;
+$red-ribbon: #ff1744;
+$star-dust: #9b9b9b;
+$tundora: #4a4a4a;
+$alto: #d8d8d8;
+$shark: #222;
+$mountain-mist: #979797;
+$mantis: #95c265;
+
+// Colors
+$title-color: #333;
+$text-color: #333;
+$link-color: $star-dust;
+$hover-color: $red-ribbon;
+$main-color: #ddd;
+$second-color: #ddd;
+$third-color: #ddd;
+$border-color: #ddd;
+$button-color: #ddd;
+
+// Font Colors
+$base-font-color: $text-color;
+$action-color: $link-color;
+
+// Border
+$base-border-color: $border-color;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: lighten($base-border-color, 10%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Bourbon grid display. Comment out to remove display.
+// $visual-grid:       true;
+$visual-grid-color: #EEEEEE;
+
+// Set to false if you'd like to remove the responsiveness.
+$responsive:    true;
+
+// Setup the column, grid, and gutter amounts.
+// $column: 1em;
+// $grid-columns: 12;
+$gutter: 4.2358em;
+
+//Breakpoints
+// $mobile-width: em(320, $em-base);
+// $tablet-width: em(720, $em-base);
+$desktop-width: em(1002, $em-base);
+// $mobile: new-breakpoint(min-width $mobile-width);
+// $tablet: new-breakpoint(min-width $tablet-width 8);
+$desktop: new-breakpoint(min-width $desktop-width 15);
+
+$medium: 768px;
+$large: 1024px;
+$x-large: 1440px;
+
+$max-width: $desktop-width;
+
+// Transitions.
+$easing: ease;
+$timing: .25s;

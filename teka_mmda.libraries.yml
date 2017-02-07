@@ -1,0 +1,51 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      dist/css/style.css: {}
+  js:
+    dist/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/modernizr
+
+svg4everybody:
+  js:
+    assets/lib/svg4everybody.js: {}
+    assets/js/mmda_svg4everybody.js: {}
+  dependencies:
+    - core/drupal
+
+slick:
+  css:
+    component:
+      assets/lib/slick/slick.css: {}
+      assets/lib/slick/slick-theme.css: {}
+  js:
+    assets/lib/slick/slick.js: {}
+  dependencies:
+    - core/jquery
+
+remodal:
+  css:
+    component:
+      assets/lib/remodal/remodal.css: {}
+      assets/lib/remodal/remodal-default-theme.css: {}
+  js:
+    assets/lib/remodal/remodal.min.js: {}
+  dependencies:
+    - core/jquery
+
+scrollmagic:
+  js:
+    assets/lib/greensock/TweenMax.min.js: {}
+    assets/lib/greensock/plugins/ScrollToPlugin.min.js: {}
+    assets/lib/scrollmagic/ScrollMagic.min.js: {}
+    assets/lib/scrollmagic/plugins/animation.gsap.min.js: {}
+    # assets/lib/scrollmagic/plugins/debug.addIndicators.min.js: {}
+
+smoothState:
+  js:
+    assets/lib/jquery.smoothState.min.js: {}
+  dependencies:
+    - core/jquery

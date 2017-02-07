@@ -1,0 +1,42 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+  set title_classes = [
+  'block__title',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="block__container">
+    {{ title_prefix }}
+    {% if label %}
+      <div class="block__title-wrapper">
+        <div class="block__title-container">
+          <div class="block__title-container-inner">
+            <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
+    <div class="parallax-wrapper">
+      <div class="parallax-inner parallax-bg"></div>
+      <div class="block__content">
+        {% block content %}
+          {{ content }}
+          <div class="join-our-team__icon">
+            <a href="#open-positions">
+              <svg class="icon icon--large"><use xlink:href="/themes/teka_mmda/dist/svg/symbol/svg/sprite.symbol.svg#arrow-right-circle"></svg>
+            </a>
+          </div>
+        {% endblock %}
+      </div>
+    </div>
+
+  </div>
+</div>

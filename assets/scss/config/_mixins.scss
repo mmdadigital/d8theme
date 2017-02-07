@@ -1,0 +1,176 @@
+/**
+ * Add all your Mixins here.
+ */
+
+// Center content
+@mixin center {
+  @include outer-container;
+  padding: 0 20px;
+  @include media($desktop) {
+    padding: 0;
+  }
+}
+
+// Opacity
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+// Default Button
+@mixin button {
+  @include border-top-radius($base-border-radius);
+  @include border-bottom-radius($base-border-radius);
+  background: $main-color;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
+
+// Clearfix.
+// http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// Typography.
+@mixin title($color: $black) {
+  font-size: 24px;
+  position: relative;
+  letter-spacing: -0.7px;
+  line-height: (24 / 24);
+  font-weight: 700;
+  color: $color;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: $color;
+    height: 3px;
+    width: 80px;
+  }
+}
+
+@mixin title-primary {
+  font-family: $sans-serif-b;
+  padding-top: 30px;
+
+  @include media($large) {
+    max-width: 390px;
+    padding-top: 65px;
+    font-size: 64px;
+    font-weight: normal;
+    letter-spacing: -2px;
+  }
+
+  &:before {
+    top: 0;
+
+    @include media($large) {
+      width: 180px;
+    }
+  }
+}
+
+@mixin title-secondary {
+  font-family: $serif;
+  font-weight: 400;
+  padding-right: 100px;
+
+  @include media($large) {
+    font-size: 48px;
+    padding-right: 200px;
+  }
+
+  &:before {
+    bottom: .2em;
+    right: 0;
+
+    @include media($large) {
+      width: 180px;
+    }
+  }
+}
+
+// Grid
+@mixin container {
+  @include outer-container(1380px);
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include media($large) {
+    max-width: percentage(1380/1440);
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include media(1920px) {
+    max-width: 1860px;
+  }
+}
+
+@mixin container-inner {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media($large) {
+    @include span-columns(8);
+    @include shift(2);
+    max-width: percentage(900/1380);
+  }
+
+  @include media($large) {
+    max-width: 1860px;
+  }
+}
+
+@mixin reset-container {
+  max-width: none;
+  padding-right: 0;
+  padding-left: 0;
+  width: auto;
+
+  > .l-container-inner {
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    float: none;
+    max-width: none;
+  }
+}
+
+// Icons
+@mixin icon-size($size: 16px) {
+  width: $size;
+  height: $size;
+}
+
+@mixin icon() {
+  @include icon-size;
+  fill: currentColor;
+}
+
+@mixin row_grid($display: default, $direction: $default-layout-direction) {
+  $layout-direction: $direction !global;
+  @if $display == table {
+    display: table;
+    @include fill-parent;
+    table-layout: fixed;
+    $container-display-table: true !global;
+  } @else {
+    @include clearfix;
+    display: block;
+    $container-display-table: false !global;
+  }
+}

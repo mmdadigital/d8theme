@@ -1,0 +1,55 @@
+.block-mmda-core-social-links {
+  margin: auto;
+
+  @include media($large) {
+    margin: 180px 38px 0 0;
+    float: right;
+  }
+  .page-node-type-jobs &,
+  .path-contact & {
+    padding: 60px 0 40px 0;
+
+    @include media($large) {
+      margin: 43px 70px;
+    }
+  }
+
+  .block__title {
+    display: none;
+
+    .path-work & {
+      display: block;
+      color: $white;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -.33px;
+      line-height: 17px;
+      margin-bottom: 31px;
+
+      @include media($large) {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    color: $white;
+    display: inline-block;
+    padding: 10px 15px;
+
+    &:hover {
+      color: $red-ribbon;
+    }
+  }
+
+  .icon {
+    display: block;
+    max-height: 24px;
+    width: 22px;
+
+    @include media($large) {
+      max-height: 32px;
+      width: 30px;
+    }
+  }
+}

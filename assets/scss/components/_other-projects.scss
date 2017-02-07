@@ -1,0 +1,101 @@
+.block-views-blockcases-block-block-1 {
+  .views-row {
+    @include media($large) {
+      @include span-columns(4 of 8);
+      @include omega(2n);
+    }
+  }
+  .block__title {
+    @include title;
+    @include title-secondary;
+    margin-bottom: 51px;
+  }
+  .block__content {
+    padding: 68px 0 83px;
+    background: $shark;
+    @include media($large) {
+      @include row;
+    }
+  }
+}
+
+.workteaser_content {
+  margin-bottom: 59px;
+}
+
+.workteaser_title{
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.52px;
+  line-height: 21px;
+  margin-bottom: 18px;
+
+  a {
+    color: $white;
+    position: relative;
+
+    &:before {
+      opacity: 0.0;
+      left: 0;
+      position: absolute;
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $star-dust;
+      @include transition(bottom $timing $easing, opacity $timing $easing);
+
+      @include media($large) {
+        bottom: -10px;
+      }
+    }
+
+    &:after {
+      top: 6px;
+      right: -24px;
+      position: absolute;
+      opacity: 0.0;
+      content: " ";
+      display: inline-block;
+      @include transition(opacity $timing $easing);
+      width: 13px;
+      height: 12px;
+      background: url('/themes/teka_mmda/dist/svg/arrow_blank.svg') center right no-repeat;
+    }
+
+    &:hover {
+
+      &:after {
+        opacity: 1.0;
+      }
+
+      &:before {
+        opacity: 1.0;
+        bottom: -6px;
+      }
+    }
+  }
+
+  @include  media($large) {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.7px;
+    line-height: 28px;
+  }
+}
+
+
+.workteaser_description {
+  color: $star-dust;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.53px;
+  line-height: 18px;
+  @include  media($large) {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.6px;
+    line-height: 21px;
+  }
+}

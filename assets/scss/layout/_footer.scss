@@ -1,0 +1,54 @@
+/**
+ * Footer
+ */
+.l-footer {
+  position: relative;
+}
+
+.footer-parallax-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.footer-parallax-inner {
+  position: absolute;
+  // height: 200%;
+  width: 100%;
+  // bottom: 10%;
+  background-image: url('../img/bghome.jpg');
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  bottom: 0;
+  height: 90vh;
+
+  @include media($large) {
+    background-attachment: fixed;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: rgba(0,0,0,.65);
+  }
+
+  .path-work &,
+  .page-node-type-cases & {
+    background-position: center top;
+    background-image: url('../img/bgwork.jpg');
+  }
+
+  .page-node-type-jobs &{
+    background-position:-270px 297px;
+    background-image: url('../img/bgcontact.jpg');
+  }
+}

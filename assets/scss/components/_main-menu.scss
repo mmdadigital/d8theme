@@ -1,0 +1,173 @@
+#block-teka-mmda-main-menu {
+  .menu-item {
+    float: left;
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .menu {
+    margin-left: -55px;
+  }
+
+  .menu-item--home {
+    margin-right: 40px;
+    @include transition(opacity $timing $easing);
+
+    .path-frontpage &,
+    .path-404 &,
+    .path-403 & {
+      margin-right: 0;
+      width: 0;
+      visibility: hidden;
+      @include opacity(0);
+    }
+
+    a {
+      &:hover {
+        &:after {
+          display: none;
+        }
+
+        svg {
+          fill: $red-ribbon;
+        }
+      }
+    }
+
+    svg {
+      vertical-align: middle;
+      height: 40px;
+      transition: height $timing $easing;
+
+      @include media($large) {
+        height: 100px;
+
+        .l-header--narrow & {
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    color: $black;
+    font-family: $sans-serif-m;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 40px;
+    @include transition(line-height $timing $easing, color $timing $easing)
+
+    &:after {
+      left: 0;
+      position: absolute;
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $star-dust;
+      transition: bottom $timing $easing, opacity $timing $easing;
+      @include opacity(0);
+
+      @include media($large) {
+        bottom: 30px;
+      }
+    }
+
+    @include media($large) {
+      line-height: 100px;
+      .l-header--narrow & {
+        line-height: 50px;
+      }
+    }
+
+    .l-header--narrow & {
+      &:after {
+        @include media($large) {
+          bottom: 8px;
+        }
+      }
+
+      &:hover {
+        &:after {
+          @include media($large) {
+            bottom: 12px;
+          }
+        }
+      }
+    }
+
+    .path-frontpage &,
+    .page-node-type-cases &,
+    .path-404 &,
+    .path-403 & {
+      color: $white;
+    }
+
+    .l-header--light & {
+      color: $black;
+    }
+
+    &:hover {
+
+      &:after {
+        bottom: 5px;
+        @include opacity(1);
+
+        @include media($large) {
+          bottom: 35px;
+        }
+      }
+    }
+  }
+
+  .contextual {
+    ul.contextual-links {
+      li {
+        a {
+          display: block;
+          font-family: sans-serif;
+          font-size: small;
+          color: $text-color;
+          line-height: 0.8em;
+          margin: 0.25em 0;
+          padding: 0.4em 0.6em;
+          
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.path-frontpage,
+.path-404,
+.path-403 {
+  .l-header {
+    #block-teka-mmda-main-menu {
+      .menu {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.is-loading,
+.is-exiting {
+  .path-frontpage,
+  .path-work,
+  .path-contact,
+  .page-node-type-cases {
+    #block-teka-mmda-main-menu {
+      a {
+        color: $black !important;
+      }
+    }
+  }
+}

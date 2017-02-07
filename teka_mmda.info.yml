@@ -1,0 +1,20 @@
+name: Teka MMDA
+type: theme
+base theme: teka
+description: 'Teka MMDA theme, with HTML5, SASS, Responsive grid base theme.'
+package: Teka MMDA
+core: 8.x
+version: '1.0'
+
+libraries:
+  - teka_mmda/global-styling
+  - teka_mmda/svg4everybody
+  - teka_mmda/scrollmagic
+  - teka_mmda/animate
+  - teka_mmda/smoothState
+  - teka_mmda/slick
+
+libraries-override:
+  core/modernizr:
+    js:
+      assets/vendor/modernizr/modernizr.min.js: assets/lib/modernizr-custom.js

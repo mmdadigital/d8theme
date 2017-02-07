@@ -1,0 +1,85 @@
+<?php
+use Drupal\Component\Utility\Html;
+
+/**
+ * @file
+ * Implements custom Teka MMDA Hooks.
+ */
+
+/**
+ * Implements template_preprocess_html().
+ */
+function teka_mmda_preprocess_html(&$variables) {
+  // Set page translatable page title for work page
+  $path = \Drupal::service('path.current')->getPath();
+  if ($path == "/work") {
+    $vars['head_title']['title'] = t('Work') . " | MMDA";
+  }
+
+  $request = Drupal::request();
+  if ($request->query->has('_exception_statuscode')) {
+    $status = $request->query->get('_exception_statuscode');
+    if ($status == 404 || $status == 403) {
+        $variables['path_error'] = $status;
+    }
+  }
+
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function teka_mmda_page_attachments_alter(&$page) {
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
+    ),
+  );
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function teka_mmda_preprocess_node(&$vars) {
+  // Add a custom template suggestion using Node type and View mode.
+  $suggestion = 'node__' . $vars['node']->getType() . '__' . $vars['view_mode'];
+  $vars['theme_hook_suggestions'][] = $suggestion;
+}
+
+/**
+ * Add class in all forms
+ */
+function teka_mmda_form_alter(&$form) {
+  $form['#attributes'] = array('class' => 'no-smoothState');
+}
+
+
+/**
+ * Implements template_preprocess_field().
+ */
+function teka_mmda_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'block_title') {
+    $old_template = $variables['items'][0]['content']['#template'];
+    $new_template = "<h2 class='block__title'>" . $old_template . "</h2>";
+    $variables['items'][0]['content']['#template'] = $new_template;
+  }
+  elseif ($variables['element']['#field_name'] == 'blcok_title_with_container') {
+    $old_template = $variables['items'][0]['content']['#template'];
+    $new_template = "<div class='l-container'><div class='l-container-inner'>";
+    $new_template .= "<h2 class='block__title'>" . $old_template . "</h2></div></div>";
+    $variables['items'][0]['content']['#template'] = $new_template;
+  }
+  elseif ($variables['element']['#field_name'] == 'block_page_title') {
+    $old_template = $variables['items'][0]['content']['#template'];
+    $new_template = "<div class='block-page-title-row'>";
+    $new_template .= "<div class='contextual-region block block-core block-page-title-block'>";
+    $new_template .= "<div class='page-title-wrapper scene_element scene_element--fadein scene_element--delayed'><div class='page-title-content'>";
+    $new_template .= "<h1 class='js-quickedit-page-title page-title'>" . $old_template . "</h1></div></div></div></div>";
+    $variables['items'][0]['content']['#template'] = $new_template;
+  }
+}

@@ -1,0 +1,105 @@
+.page-node-type-jobs {
+  .page-title-content {
+    padding-top: 80px;
+    font-size: 24px;
+    letter-spacing: -0.7px;
+    line-height: 28px;
+    width: 182px;
+
+    @include media($large) {
+      padding-top: 81px;
+      width: 100%;
+    }
+
+    h1 {
+      @include title;
+      @include title-primary;
+      font-weight: 500;
+      @include media($large) {
+        max-width: 600px;
+        padding-top: 59px;
+      }
+    }
+  }
+
+  .field--name-field-location {
+    color: $star-dust;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.53px;
+    padding: 53px 0 60px;
+    @include media($large) {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: -0.6px;
+      padding: 31px 0 96px 0;
+    }
+  }
+  .field--name-body {
+    color: $tundora;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    @include media($large) {
+      font-size: 24px;
+      line-height: 34px;
+      font-weight: 400;
+    }
+  }
+
+  .field--name-field-to-apply {
+    padding: 68px 0 14px;
+    .field__label {
+      @include title;
+      @include title-secondary;
+      font-size: 24px;
+      font-family:$serif;
+      font-weight: 400;
+      letter-spacing: -0.75px;
+      line-height: 18px;
+      @include media($large) {
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: -1.5px;
+        line-height: 48px;
+      }
+    }
+    .field__item {
+      color: $star-dust;
+      padding: 42px 0 56px 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+      @include media($large) {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: -0.6px;
+        padding: 32px 0 56px 0;
+      }
+    }
+
+    @include media($large) {
+      padding: 120px 0;
+    }
+
+  }
+
+}
+
+.node--type-jobs {
+  ul {
+    li {
+      &:before {
+        content: '•';
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .contextual ul.contextual-links li:before {
+    display: none;
+  }
+}

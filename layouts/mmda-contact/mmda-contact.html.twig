@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Template for the contact page.
+ */
+#}
+<div class="l-mmda-contact clearfix scene_element scene_element__main scene_element--fadein">
+  {% if content.one %}
+  <div class="l-mmda-contact__row l-mmda-contact__row—title">
+    <div class="l-container">
+      {{ content.one }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if content.two %}
+  <div class="l-mmda-contact__row l-mmda-contact__row--1">
+    <div class="l-container">
+      {{ content.two }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if content.three %}
+    <div class="l-mmda-contact__row l-mmda-contact__row--2">
+      {{ content.three }}
+    </div>
+  {% endif %}
+
+  {% if content.four %}
+    <div class="l-mmda-contact__row l-mmda-contact__row--3">
+      <div class="l-container">
+        {{ content.four }}
+      </div>
+    </div>
+  {% endif %}
+</div>

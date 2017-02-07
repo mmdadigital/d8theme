@@ -1,0 +1,131 @@
+// Service - Teaser.
+.node--type-service.node--view-mode-teaser {
+  .node__content {
+    width: 100%;
+    height: 100vh;
+    min-height: 320px;
+    position: relative;
+
+    @include media($large, orientation landscape) {
+      min-height: $medium;
+    }
+  }
+
+  .field--name-field-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    @include transition(top $timing $easing);
+
+    .no-objectfit & {
+      background-size: cover;
+      background-position: center center;
+      // height: 50%;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black,.65);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      .no-objectfit & {
+        display: none;
+      }
+    }
+  }
+
+  .services-slick-bg {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+  }
+
+  .services-slick-bg--fixed {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+
+    @include media($large) {
+      background-attachment: fixed;
+    }
+
+    &:after {
+      top: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black,.65);
+    }
+  }
+
+  .field--name-field-icon-id,
+  .field--name-body {
+    position: relative;
+  }
+
+  .field--name-field-icon-id {
+    color: rgba($white, .5);
+    padding-top: (173 / 667 * 100) + vh;
+
+    @include media($large) {
+      padding-top: (339 / 900 * 100) + vh;
+    }
+
+    svg {
+      @include icon-size(48px);
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+
+      @media (min-width: 667px) and (orientation: landscape), (min-height: 667px) and (orientation: portrait) {
+        @include icon-size(60px);
+      }
+
+      @include media($large) {
+        @include icon-size(80px);
+      }
+    }
+  }
+
+  .field--name-body {
+    margin-top: (50 / 667 * 100) + vh;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    line-height: (21 / 14);
+
+    @media (min-width: 667px) and (orientation: landscape), (min-height: 667px) and (orientation: portrait) {
+      font-size: 16px;
+      line-height: (28 / 16);
+    }
+
+    @include media($large) {
+      min-width: 575px;
+      max-width: percentage(575/900);
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: (80 / 900 * 100) + vh;
+      font-size: 24px;
+      min-width: 575px;
+      padding-right: 0;
+      padding-left: 0;
+      line-height: (40 / 24);
+    }
+  }
+}

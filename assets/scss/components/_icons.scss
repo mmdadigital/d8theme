@@ -1,0 +1,19 @@
+.icon {
+  @include icon();
+}
+
+.icon--small {
+  @include icon-size(16px);
+}
+
+.icon--medium {
+  @include icon-size(32px);
+}
+
+.icon--large {
+  @include icon-size(48px);
+}
+
+.icon--flip  {
+  transform: scaleX(-1);
+}

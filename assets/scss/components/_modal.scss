@@ -1,0 +1,17 @@
+.remodal-overlay {
+  background: rgba($shark, .9);
+}
+
+.remodal-close {
+  left: auto;
+  right: 0;
+
+  &:hover {
+    background-color: transparent;
+    color: $hover-color;
+  }
+}
+
+.remodal {
+  color: $black;
+}

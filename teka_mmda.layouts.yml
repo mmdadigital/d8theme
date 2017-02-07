@@ -1,0 +1,49 @@
+mmda_contact:
+  label: MMDA Contact
+  category: MMDA
+  template: layouts/mmda-contact/mmda-contact
+  regions:
+    one:
+      label: Region one
+    two:
+      label: Region two
+    three:
+      label: Region three
+
+mmda_work:
+  label: MMDA Work
+  category: MMDA
+  template: layouts/mmda-work/mmda-work
+  regions:
+    one:
+      label: Region one
+    two:
+      label: Region two
+    three:
+      label: Region three
+
+mmda_home:
+  label: MMDA Home
+  category: MMDA
+  template: layouts/mmda-home/mmda-home
+  regions:
+    one:
+      label: Region one
+    two:
+      label: Region two
+    three:
+      label: Region three
+    four:
+      label: Region four
+    five:
+      label: Region five
+    six:
+      label: Region six
+
+mmda_styleguide:
+  label: MMDA Styleguide
+  category: MMDA
+  template: layouts/mmda-styleguide/mmda-styleguide
+  regions:
+    one:
+      label: Region one

@@ -1,0 +1,28 @@
+.block-views-blockcases-block-block-2 {
+  .view-content {
+    @include row;
+  }
+
+  .views-row {
+    margin-bottom: 75px;
+
+    @include media($medium) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media($large) {
+      &,
+      &:nth-child(2n) {
+        @include span-columns(4);
+      }
+
+      &:nth-child(2n+1) {
+        clear: none;
+      }
+
+      @include omega(3n);
+      margin-bottom: 135px;
+    }
+  }
+}

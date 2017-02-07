@@ -1,0 +1,113 @@
+.l-page-wrapper {
+  padding-top: 120px;
+
+  @include media($large) {
+    padding-top: 160px;
+  }
+
+  .path-frontpage &,
+  .page-node-type-cases &,
+  .path-contact & {
+    padding-top: 0;
+  }
+}
+
+.path-404, .path-403 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background: url('../img/bg404.jpg') top center no-repeat;
+  background-size: cover;
+
+  .l-page-wrapper {
+    height: 100%;
+  }
+
+  .l-container--content-wrapper {
+    top :50%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    @include transform(translateY(-40%));
+    color: $white;
+  }
+
+  .page-title-content {
+    h1 {
+      font-family: $sans-serif-m;
+      font-size: 24px;
+      margin-bottom: 30px;
+
+      @include media($large) {
+        font-size: 64px;
+      }
+    }
+  }
+
+  .block-system-main-block {
+    font-size: 16px;
+
+    @include media($large) {
+      font-size: 24px;
+    }
+  }
+}
+
+.path-user {
+  .l-footer {
+    display: none;
+  }
+}
+
+.path-403 {
+  background-image: url('../img/bg403.jpg');
+}
+
+.maintenance-page {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  background: url('../img/bg_offline.jpg') bottom center no-repeat $black;
+
+  .layout-container {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+
+    main {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      font-size: 18px;
+      color: $white;
+      @include transform(translateY(-100%));
+
+      @include media($large) {
+        font-size: 24px;
+      }
+
+      .l-container {
+        position: relative;
+        @include container-inner;
+      }
+
+      h1 {
+        font-family: $sans-serif-b;
+        font-size: 24px;
+        margin-bottom: 30px;
+
+        @include media($large) {
+          font-size: 64px;
+        }
+      }
+    }
+  }
+}

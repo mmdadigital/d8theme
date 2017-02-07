@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Template for the Work page.
+ */
+#}
+<div class="l-mmda-work clearfix scene_element scene_element__main scene_element--fadein">
+  {% if content.one %}
+  <div class="l-mmda-work__row l-mmda-work__row--1">
+    <div class="l-container">
+      {{ content.one }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if content.two %}
+    <div class="l-mmda-work__row l-mmda-work__row--2">
+        {{ content.two }}
+    </div>
+  {% endif %}
+
+  {% if content.three %}
+    <div class="l-mmda-work__row l-mmda-work__row--3">
+      <div class="l-container">
+        {{ content.three }}
+      </div>
+    </div>
+  {% endif %}
+</div>

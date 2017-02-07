@@ -1,0 +1,190 @@
+// Hero Banner
+
+// Settings
+
+$hero-primary-color: $red-ribbon;
+$hero-text-color: $white;
+
+// Styles
+.hero {
+  position: relative;
+  background: $black;
+  height: 100vh;
+
+  article {
+    height: 100vh;
+    background-size: cover;
+    background-position: center bottom;
+
+    .no-touchevents & {
+      background-attachment: fixed;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.65);
+        z-index: 1;
+      }
+  }
+}
+
+.hero__cta {
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  bottom: 26vh;
+  left: 0;
+  z-index: 1;
+}
+
+.iphone .hero__cta {
+  bottom: 200px;
+  bottom: 45vh;
+}
+
+.hero__row {
+  @include row_grid(table);
+}
+
+.hero__col {
+  @include span-columns(4 of 8);
+  @include pad;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: bottom;;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.hero__button {
+  display: inline-block;
+  color: $hero-primary-color;
+
+  &:hover {
+    color: $hero-text-color;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.hero__button--large {
+  display: none;
+
+  @include media($large) {
+    display: inline-block;
+  }
+}
+
+.hero__button--small {
+  position: absolute;
+  bottom: 30px;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  @include media($large) {
+    display: none;
+  }
+}
+
+.iphone .hero__button--small {
+  bottom: 114px;
+  bottom: 20vh;
+}
+
+.hero__brand {
+  max-width: 50vh;
+
+  @include media($medium) {
+    max-width: 268px;
+  }
+
+  @include media($large) {
+    max-width: 308px;
+  }
+
+  @include media(min-height 600px min-width 1445px) {
+    max-width: 338px;
+  }
+}
+
+.hero__brand-inner {
+  position: relative;
+  height: 0;
+  padding-top: percentage(251/308);
+  color: $hero-text-color;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -30%;
+    width: percentage(180/308);
+    height: 3px;
+    background-color: $hero-primary-color;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    max-height: 40vh
+  }
+}
+
+.hero__slogan-wrapper {
+  text-align: right;
+  @include media($large) {
+    white-space: nowrap;
+  }
+}
+
+.hero__slogan,
+.hero__button--large {
+  vertical-align: middle;
+}
+
+.hero__slogan {
+  display: inline-block;
+  margin-bottom: .75vw;
+  color: $hero-text-color;
+  line-height: (18 / 16);
+  font-weight: 300;
+
+  @include media($medium) {
+    font-size: 36px;
+  }
+
+  @include media($large) {
+    font-size: 36px;
+    margin-right: .5em;
+    margin-bottom: 0;
+    line-height: (44 / 36);
+  }
+
+  @include media($x-large) {
+    font-size: 44px;
+  }
+}

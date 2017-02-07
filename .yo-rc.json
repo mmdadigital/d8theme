@@ -1,0 +1,9 @@
+{
+  "generator-teka": {
+    "projectName": "Teka MMDA",
+    "projectHost": "mmda_2016.l",
+    "projectSlug": "teka_mmda",
+    "drupalVersion": "8.x",
+    "baseTheme": "teka"
+  }
+}

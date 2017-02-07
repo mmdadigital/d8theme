@@ -1,0 +1,65 @@
+.node--type-jobs.node--view-mode-teaser {
+  .node__title {
+    margin: 0;
+    @include span-columns(8);
+
+    a {
+      position: relative;
+      display: inline-block;
+      color: $black;
+      padding: 15px 0;
+      letter-spacing: -.5px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: (18 / 16);
+
+      @include media($large) {
+        font-size: 24px;
+        line-height: (28 / 24);
+        letter-spacing: -.7px;
+      }
+
+      &:after {
+        opacity: 0.0;
+        left: 0;
+        position: absolute;
+        bottom: 8px;
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $star-dust;
+        transition: bottom $timing $easing, opacity $timing $easing;
+      }
+
+      &:hover {
+        color: $black;
+
+        &:after {
+          opacity: 1.0;
+          bottom: 14px;
+        }
+      }
+    }
+  }
+
+  .node__content {
+    @include span-columns(4);
+    padding: 15px 0;
+  }
+
+  .field--name-field-location {
+    text-align: right;
+    color: $star-dust;
+    font-size: 14px;
+    letter-spacing: -.4px;
+    line-height: (16 / 14);
+    font-weight: 400;
+
+    @include media($large) {
+      font-size: 18px;
+      letter-spacing: -.6px;
+      line-height: (21 / 18);
+    }
+  }
+}

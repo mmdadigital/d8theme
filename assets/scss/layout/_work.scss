@@ -1,0 +1,39 @@
+.path-work {
+  .block-views-blockcases-block-cases-view .view-display-id-cases_view .l-container {
+    max-width: 1400px;
+  }
+
+
+  .l-container--content-wrapper {
+    @include reset-container;
+  }
+  
+  #block-teka-mmda-page-title {
+    display: none;
+  }
+
+  .page-title-wrapper {
+    @include container;
+    padding: 60px 0 95px;
+
+
+    @include media($large) {
+      max-width: 100%;
+      padding-bottom: 80px;
+    }
+  }
+
+  .page-title-content {
+    @include container-inner;
+  }
+
+  h1 {
+    @include title();
+    @include title-primary;
+    max-width: 100px;
+
+    @include media($large) {
+      max-width: 250px;
+    }
+  }
+}
